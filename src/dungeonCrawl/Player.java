@@ -22,5 +22,7 @@ package dungeonCrawl;
  */
 public class Player
 {
+	
+	
 
 }
