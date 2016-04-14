@@ -157,6 +157,20 @@ public class Dungeon
 	}
 	
 	/**
+	 * Retrieves the room occupied by the player.         
+	 *
+	 * <hr>
+	 * Date created: Apr 13, 2016
+	 *
+	 * <hr>
+	 * @return Player's current room.
+	 */
+	public Room getCurrentRoom()
+	{
+		return rooms.get(playerPosition[0]).get(playerPosition[1]);
+	}
+	
+	/**
 	 * Generates the rooms of the dungeon.
 	 * Randomly selects the number of rooms
 	 * and places the weapons.
@@ -395,15 +409,12 @@ public class Dungeon
 				{
 					switch(r.getEnemy().getClass().getSimpleName())
 					{
-						case "Boglin": 
-							mapString += "B";
-							break;
-						case "Squilderdash": 
-							mapString += "S";
-							break;
-						case "Ragdon": 
-							mapString += "R";
-							break;
+						case "Boglin": mapString += "B";
+						break;
+						case "Squilderdash": mapString += "S";
+						break;
+						case "Ragdon": mapString += "R";
+						break;
 					} // end switch
 				} // end if
 				else 
@@ -415,21 +426,15 @@ public class Dungeon
 				{
 					switch(r.getWeapon().getClass().getSimpleName())
 					{
-						case "Stick": 
-							mapString += "T";
-							break;
-						case "Sword": 
-							mapString += "W";
-							break;
-						case "Polearm": 
-							mapString += "P";
-							break;
-						case "Hammer": 
-							mapString += "H";
-							break;
-						case "Atlatl": 
-							mapString += "A";
-							break;
+						case "Stick": mapString += "T";
+						break;
+						case "Sword": mapString += "W";
+						break;
+						case "Polearm": mapString += "P";
+						break;
+						case "Hammer": mapString += "H";
+						break;
+						case "Atlatl": mapString += "A";
 					} // end switch
 				} // end if
 				else 
