@@ -20,7 +20,7 @@ package dungeonCrawl;
  * <hr>
  * @author Matthew Moore
  */
-public class Player extends Participants
+public class Player extends Participant
 {
 	//Weapon adds to the player's damage
 	private Weapon weapon;
@@ -42,9 +42,9 @@ public class Player extends Participants
 		//Default player has 100hp, 10% miss chance, and 5 strength(5 strength = 5 attackPower with unarmed weapon)
 		super(100, .1, 5 );
 		//player starts unarmed
-		this.weapon = new Unarmed();
+		setWeapon(new Unarmed());
 		//player starts with one potion
-		this.potions = 1;
+		setPotions(1);
 		//attack power = strength + bonus dmg from weapon. Default = 5
 		setAttackPower();
 		
@@ -67,8 +67,8 @@ public class Player extends Participants
 	public Player(int maxHealth, double missPct, int strength, Weapon weapon, int potions)
 	{
 		super(maxHealth, missPct, strength);
-		this.weapon = weapon;
-		this.potions = potions;	
+		setWeapon(weapon);
+		setPotions(potions);	
 		setAttackPower();
 	}
 	
@@ -84,6 +84,7 @@ public class Player extends Participants
 	public void setWeapon(Weapon weapon)
 	{
 		this.weapon = weapon;
+		setAttackPower();
 	}
 	
 	/**
@@ -167,7 +168,8 @@ public class Player extends Participants
 	 */
 	public void drinkPotion()
 	{
-		currentHealth += 10;
+		currentHealth += 30;
+		potions--;
 	}
 	
 	/**

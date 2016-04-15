@@ -20,18 +20,19 @@ package dungeonCrawl;
  * <hr>
  * @author Allison Ivey
  */
-public class Participants
+public class Participant
 {
 	protected int maxHealth;
 	protected int currentHealth;
 	protected double missPct;
 	protected int strength;
 	
-	public Participants(int maxHealth, double missPct, int strength)
+	public Participant(int maxHealth, double missPct, int strength)
 	{
-		this.maxHealth = maxHealth;
-		this.missPct = missPct;
-		this.strength = strength;
+		setMaxHealth(maxHealth);
+		setMissPct(missPct);
+		setStrength(strength);
+		setCurrentHealth(maxHealth);
 	}
 	
 	public void setStrength(int strength)
@@ -76,7 +77,7 @@ public class Participants
 	
 	public boolean isAlive()
 	{
-		boolean isAlive = false;
+		boolean isAlive = true;
 		
 		if(currentHealth <= 0)
 		{

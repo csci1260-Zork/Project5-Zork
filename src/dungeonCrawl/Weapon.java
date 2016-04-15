@@ -30,14 +30,10 @@ public abstract class Weapon
 		return damageBonus;
 	}
 
-	/**
-	 * 
-	 * This seem unnecessary
-	 * 
+	
 	public void setDamageBonus(int damageBonus)
 	{
 		this.damageBonus = damageBonus;
 	}
-	*/
 	
 }

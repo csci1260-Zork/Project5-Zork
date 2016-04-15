@@ -242,7 +242,7 @@ public class Game
 					 + " lying on the ground.\n";
 		
 		// If player has no weapon, pick it up.
-		if (player.getWeapon() == null)
+		if (player.getWeapon().getClass().getSimpleName().equals("Unarmed"))
 		{
 			description += "\tEcstatic to have something to defend yourself with, you pick it\n"
 						+ "\tup and try it out against an old, decrepit barrel in the corner.\n\n";
@@ -298,7 +298,7 @@ public class Game
 					+  "\tYou know these may be the last breaths you take, but you charge in for battle!\n";
 		
 		// Perform combat turns until one of the combatants run out of health.
-		while (player.getCurrentHealth() > 0 && enemy.getCurrentHealth() > 0)
+		while (player.isAlive() && enemy.isAlive())
 		{
 			// Check for player hit
 			if (rand.nextDouble() >= player.getMissPct())
@@ -314,15 +314,15 @@ public class Game
 				description += "\n\tYou strike at the beast, but miss!\n";
 			}
 			
-			// Check for enemy hit
-			if (rand.nextDouble() >= enemy.getMissPct())
+			// Check for enemy hit and that the enemy hasn't died.
+			if (rand.nextDouble() >= enemy.getMissPct() && enemy.isAlive())
 			{
 				// Hit! Deal damage to player.
 				player.takeDamage(enemy.getStrength());
 				description += "\t\tThe creature strikes you, dealing "
 							+ enemy.getStrength() + " damage!\n";
 			}
-			else
+			else if (enemy.isAlive())
 			{
 				// Miss!
 				description += "\t\tThe monster tries to clumsily attack, but misses!\n";
@@ -330,11 +330,22 @@ public class Game
 		}
 		
 		// Describe the losing party falling to the floor.
-		if (player.getCurrentHealth() <= 0)
+		if (!player.isAlive())
 			description += "\nYou fall to the floor as darkness envelops you...";
 		else
 			description += "\nThe horrendous " + enemy.getClass().getSimpleName()
-						+ " falls vanquished to the dungeon floor.\n\tYou are victorious!";
+						+ " falls vanquished to the dungeon floor.\n\tYou are victorious!\n";
+		
+		// Check the body for potions.
+		if (enemy.getHasPotion() && player.isAlive())
+		{
+			description += "\nYou notice a small potion vial on the corpse. What luck!\n"
+							+ "\tOne potion added.";
+			player.addPotion();
+		}
+		
+		// Remove the dead enemy from the room.
+		currentRoom.setEnemy(null);
 		
 		return description;
 	}

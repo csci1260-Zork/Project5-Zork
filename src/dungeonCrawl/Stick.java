@@ -33,7 +33,7 @@ public class Stick extends Weapon
 	 */
 	public Stick()
 	{
-		damageBonus = 1;
+		setDamageBonus(1);
 	}
 
 }

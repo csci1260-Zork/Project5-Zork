@@ -33,7 +33,7 @@ public class Sword extends Weapon
 	 */
 	public Sword()
 	{
-		damageBonus = 3;
+		setDamageBonus(3);
 	}
 
 }

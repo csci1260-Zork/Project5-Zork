@@ -25,7 +25,7 @@ import java.util.Random;
  * @author Allison Ivey
  */
 
-public class Enemy extends Participants
+public class Enemy extends Participant
 {
 	protected boolean hasPotion;
 	

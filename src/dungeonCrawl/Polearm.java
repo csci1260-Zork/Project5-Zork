@@ -33,7 +33,7 @@ public class Polearm extends Weapon
 	 */
 	public Polearm()
 	{
-		damageBonus = 5;
+		setDamageBonus(5);
 	}
 
 }

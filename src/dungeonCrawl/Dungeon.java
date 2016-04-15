@@ -381,9 +381,16 @@ public class Dungeon
 	public String toString()
 	{
 		String mapString = ""; // The string representation.
-		int y = 0;	// Tracks the current row.
-		int x = 0;  // Tracks the current column. These two variables are
+		int y = 0,	// Tracks the current row.
+		    x = 0,  // Tracks the current column. These two variables are
 					// used to track the player's location on the map.
+		    i = 0;  // Loop counter.
+		
+		// Add the top layer of underscores to the dungeon.
+		mapString += "\n";
+		for (i = 0; i < rooms.get(0).size(); i++)
+			mapString+= " _____ ";
+		mapString += "\n";
 		
 		// Iterate over the rows.
 		for (ArrayList<Room> row : rooms)
@@ -430,7 +437,7 @@ public class Dungeon
 						break;
 						case "Sword": mapString += "W";
 						break;
-						case "Polearm": mapString += "P";
+						case "Polearm": mapString += "O";
 						break;
 						case "Hammer": mapString += "H";
 						break;
@@ -447,6 +454,10 @@ public class Dungeon
 			mapString += "\n"; // Next row goes on a new line.
 			y++; // Iterate the row counter
 		} // end for (rows)
+		
+		// Add the map legend.
+		mapString += "LEGEND: \n\tP:Player  B:Boglin  S:Squilderdash  R:Ragdon\n"
+				   + "\tT:Stick  W:Sword  O:Polearm  H:Hammer  A:Atlatl\n";
 		
 		return mapString;
 	}

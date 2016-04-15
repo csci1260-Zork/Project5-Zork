@@ -33,6 +33,6 @@ public class Atlatl extends Weapon
 	 */
 	public Atlatl()
 	{
-		damageBonus = 4;
+		setDamageBonus(4);
 	}
 }
