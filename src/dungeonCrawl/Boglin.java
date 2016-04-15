@@ -33,6 +33,6 @@ public class Boglin extends Enemy
 	 */
 	public Boglin ( )
 	{
-		super(20, .2, 20);
+		super(20, .2, 4);
 	}
 }

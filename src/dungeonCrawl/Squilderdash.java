@@ -33,7 +33,7 @@ public class Squilderdash extends Enemy
 	 */
 	public Squilderdash ( )
 	{
-		super(20, .25, 15);
+		super(20, .1, 2);
 	}
 
 }
