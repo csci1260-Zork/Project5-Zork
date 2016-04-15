@@ -29,9 +29,10 @@ public class Participant
 	
 	public Participant(int maxHealth, double missPct, int strength)
 	{
-		this.maxHealth = maxHealth;
-		this.missPct = missPct;
-		this.strength = strength;
+		setMaxHealth(maxHealth);
+		setMissPct(missPct);
+		setStrength(strength);
+		setCurrentHealth(maxHealth);
 	}
 	
 	public void setStrength(int strength)
