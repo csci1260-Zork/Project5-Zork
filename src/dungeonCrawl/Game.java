@@ -334,7 +334,15 @@ public class Game
 			description += "\nYou fall to the floor as darkness envelops you...";
 		else
 			description += "\nThe horrendous " + enemy.getClass().getSimpleName()
-						+ " falls vanquished to the dungeon floor.\n\tYou are victorious!";
+						+ " falls vanquished to the dungeon floor.\n\tYou are victorious!\n";
+		
+		// Check the body for potions.
+		if (enemy.getHasPotion() && player.isAlive())
+		{
+			description += "\nYou notice a small potion vial on the corpse. What luck!\n"
+							+ "\tOne potion added.";
+			player.addPotion();
+		}
 		
 		return description;
 	}
