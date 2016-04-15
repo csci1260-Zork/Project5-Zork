@@ -1,11 +1,11 @@
 /**
  * ---------------------------------------------------------------------------
- * File name: Weapon.java
+ * File name: Stick.java
  * Project name: Project5-Zork
  * ---------------------------------------------------------------------------
  * Creator's name and email: Matthew Moore, zmjm40@goldmail.etsu.edu
  * Course:  CSCI 1260
- * Creation Date: Apr 14, 2016
+ * Creation Date: Apr 15, 2016
  * ---------------------------------------------------------------------------
  */
 
@@ -13,31 +13,27 @@ package dungeonCrawl;
 
 
 /**
- * Abstract super class of weapon class that provide a damage bonus to the player.
- * To be randomly placed in dungeon. 
+ * Weakest weapon(excluding unarmed weapon status). 1st tier weapon, +1 damage.
  *
  * <hr>
- * Date created: Apr 14, 2016
+ * Date created: Apr 15, 2016
  * <hr>
  * @author Matthew Moore
  */
-public abstract class Weapon
+public class Stick extends Weapon
 {
-	protected int damageBonus;
 	
-	public int getDamageBonus()
+	/**
+	 * Constructor        
+	 *
+	 * <hr>
+	 * Date created: Apr 15, 2016 
+	 *
+	 * 
+	 */
+	public Stick()
 	{
-		return damageBonus;
+		damageBonus = 1;
 	}
 
-	/**
-	 * 
-	 * This seem unnecessary
-	 * 
-	public void setDamageBonus(int damageBonus)
-	{
-		this.damageBonus = damageBonus;
-	}
-	*/
-	
 }
