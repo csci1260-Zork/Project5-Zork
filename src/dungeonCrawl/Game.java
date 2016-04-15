@@ -242,7 +242,7 @@ public class Game
 					 + " lying on the ground.\n";
 		
 		// If player has no weapon, pick it up.
-		if (player.getWeapon() == null)
+		if (player.getWeapon().getClass().getSimpleName() == "Unarmed")
 		{
 			description += "\tEcstatic to have something to defend yourself with, you pick it\n"
 						+ "\tup and try it out against an old, decrepit barrel in the corner.\n\n";
