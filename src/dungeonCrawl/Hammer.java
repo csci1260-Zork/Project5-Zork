@@ -33,7 +33,7 @@ public class Hammer extends Weapon
 	 */
 	public Hammer()
 	{
-		damageBonus = 2;
+		setDamageBonus(2);
 	}
 
 }
