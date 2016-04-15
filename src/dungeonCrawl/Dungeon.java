@@ -430,7 +430,7 @@ public class Dungeon
 						break;
 						case "Sword": mapString += "W";
 						break;
-						case "Polearm": mapString += "P";
+						case "Polearm": mapString += "O";
 						break;
 						case "Hammer": mapString += "H";
 						break;
@@ -447,6 +447,10 @@ public class Dungeon
 			mapString += "\n"; // Next row goes on a new line.
 			y++; // Iterate the row counter
 		} // end for (rows)
+		
+		// Add the map legend.
+		mapString += "LEGEND: \n\tP:Player  B:Boglin  S:Squilderdash  R:Ragdon\n"
+				   + "\tT:Stick  W:Sword  O:Polearm  H:Hammer  A:Atlatl\n";
 		
 		return mapString;
 	}
