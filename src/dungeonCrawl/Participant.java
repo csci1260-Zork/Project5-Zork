@@ -77,7 +77,7 @@ public class Participant
 	
 	public boolean isAlive()
 	{
-		boolean isAlive = false;
+		boolean isAlive = true;
 		
 		if(currentHealth <= 0)
 		{
