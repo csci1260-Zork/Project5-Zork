@@ -84,6 +84,7 @@ public class Player extends Participant
 	public void setWeapon(Weapon weapon)
 	{
 		this.weapon = weapon;
+		setAttackPower();
 	}
 	
 	/**
