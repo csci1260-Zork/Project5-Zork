@@ -33,7 +33,7 @@ public class Ragdon extends Enemy
 	 */
 	public Ragdon ( )
 	{
-		super(20, .35, 8);
+		super(30, .35, 8);
 	}
 
 }
